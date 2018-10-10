@@ -1,4 +1,4 @@
-package com.albarn.lab2;
+package com.albarn.equation;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.albarn.lab2", appContext.getPackageName());
+        assertEquals("com.albarn.equation", appContext.getPackageName());
     }
 }

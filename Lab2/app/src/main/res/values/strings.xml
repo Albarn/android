@@ -1,9 +1,13 @@
 <resources>
-    <string name="app_name">Lab2 641p Shalikov</string>
-    <string name="equation_pattern">a=1 b=-4 c=0</string>
+    <string name="app_name">Android 641p Shalikov</string>
+    <string name="equation_pattern">a=1,b=-4,c=0</string>
     <string name="action">solve</string>
     <string name="no_ans">no solution</string>
     <string name="one_ans">answer: %1$d</string>
     <string name="two_ans">answer: %1$d; %2$d</string>
     <string name="parse_error_message">failed to parse equation</string>
+    <string name="task1">solve equation</string>
+    <string name="task2">sort array</string>
+    <string name="task2_pattern">n=5(4,3,2,16,0)</string>
+    <string name="task2_action">sort</string>
 </resources>

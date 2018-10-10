@@ -1,4 +1,4 @@
-package com.albarn.lab2;
+package com.albarn.equation;
 
 import org.junit.Test;
 
