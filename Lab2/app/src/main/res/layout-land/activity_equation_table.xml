@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".EquationActivity" android:orientation="vertical">
-    <TableRow>
+    <TableRow android:layout_marginLeft="40dp" android:layout_marginRight="40dp" android:layout_marginBottom="20dp"
+              android:layout_marginTop="20dp">
         <EditText
                 android:hint="@string/equation_pattern"
                 android:labelFor="@id/equationEditText"
@@ -15,22 +16,24 @@
                 android:inputType="textPersonName"
                 android:text="@string/equation_pattern"
                 android:ems="10"
-                android:layout_margin="3dp"
-                android:id="@+id/equationEditText"/>
+                android:id="@+id/equationEditText" android:layout_marginLeft="40dp" android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp" android:layout_marginTop="20dp"/>
     </TableRow>
-    <TableRow>
+    <TableRow android:layout_marginLeft="40dp" android:layout_marginRight="40dp" android:layout_marginBottom="20dp"
+              android:layout_marginTop="20dp">
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:id="@+id/ansLabel"/>
+                android:id="@+id/ansLabel" android:layout_marginLeft="40dp" android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp" android:layout_marginTop="20dp"/>
     </TableRow>
-        <TableRow>
-            <Button
-                    android:onClick="solve"
-                    android:text="@string/action"
-                    android:layout_width="match_parent"
-                    android:layout_margin="3dp"
-                    android:layout_height="wrap_content" android:id="@+id/solveButton"/>
-        </TableRow>
+    <TableRow android:layout_marginLeft="40dp" android:layout_marginRight="40dp" android:layout_marginBottom="20dp"
+              android:layout_marginTop="20dp">
+        <Button
+                android:onClick="solve"
+                android:text="@string/action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/solveButton" android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp" android:layout_marginBottom="20dp" android:layout_marginTop="20dp"/>
+    </TableRow>
 </TableLayout>

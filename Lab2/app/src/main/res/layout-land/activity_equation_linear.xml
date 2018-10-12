@@ -15,18 +15,18 @@
             android:inputType="textPersonName"
             android:text="@string/equation_pattern"
             android:ems="10"
-            android:layout_margin="3dp"
+            android:layout_margin="20dp"
             android:id="@+id/equationEditText"/>
     <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="20dp"
             android:id="@+id/ansLabel"/>
     <Button
             android:onClick="solve"
             android:text="@string/action"
             android:layout_width="match_parent"
-            android:layout_margin="3dp"
+            android:layout_margin="40dp"
             android:layout_height="wrap_content" android:id="@+id/solveButton"/>
 
 </LinearLayout>
