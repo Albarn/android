@@ -52,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    private int visited=1;
+    private int visited=0;
+
     @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+    protected void onSaveInstanceState(Bundle outState) {
         Log.d(getString(R.string.log_tag_lifecycle),"MainActivity.onSaveInstanceState");
-        super.onSaveInstanceState(outState, outPersistentState);
+        super.onSaveInstanceState(outState);
         outState.putInt(getString(R.string.header),visited);
     }
 
