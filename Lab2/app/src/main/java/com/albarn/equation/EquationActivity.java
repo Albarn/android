@@ -1,5 +1,6 @@
 package com.albarn.equation;
 
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +14,63 @@ public class EquationActivity extends AppCompatActivity {
     private EditText equationEditText=null;
 
     @Override
+    protected void onStart() {
+        Log.d(getString(R.string.log_tag_lifecycle),"EquationActivity.onStart");
+        super.onStart();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.d(getString(R.string.log_tag_lifecycle),"EquationActivity.onRestart");
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.d(getString(R.string.log_tag_lifecycle),"EquationActivity.onResume");
+        super.onResume();
+        TextView header=findViewById(R.id.headerEquation);
+        String message=getString(R.string.header)+visited;
+        header.setText(message);
+    }
+
+    @Override
+    protected void onPause() {
+        Log.d(getString(R.string.log_tag_lifecycle),"EquationActivity.onPause");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.d(getString(R.string.log_tag_lifecycle),"EquationActivity.onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.d(getString(R.string.log_tag_lifecycle),"EquationActivity.onDestroy");
+        super.onDestroy();
+    }
+
+    private int visited=1;
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        Log.d(getString(R.string.log_tag_lifecycle),"EquationActivity.onSaveInstanceState");
+        super.onSaveInstanceState(outState, outPersistentState);
+        outState.putInt(getString(R.string.header),visited);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Log.d(getString(R.string.log_tag_lifecycle),"EquationActivity.onRestoreInstanceState");
+        super.onRestoreInstanceState(savedInstanceState);
+        visited=savedInstanceState.getInt(getString(R.string.header));
+        visited++;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(getString(R.string.log_tag_lifecycle),"EquationActivity.onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equation_linear);
 
@@ -42,7 +99,7 @@ public class EquationActivity extends AppCompatActivity {
 
             //if exception during parse, show it to user
             //and show details in log
-            Log.e("albarn",e.getMessage());
+            Log.e(getString(R.string.log_tag_calculation),e.getMessage());
             ansLabel.setText(R.string.parse_error_message);
         }
     }

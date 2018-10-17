@@ -7,7 +7,7 @@ import com.albarn.ParseException;
 import java.util.ArrayList;
 
 public class ArrayParser {
-    private static final String TAG="ArrayParser";
+    private static final String TAG="com.albarn.calculation";
 
     public static Pair<String,double[]> parseNamedArray(String text) throws ParseException {
         int equalIndex=text.indexOf('=');
@@ -30,7 +30,7 @@ public class ArrayParser {
                     throw new ParseException(i,"letter or digit");
                 }
             }
-            Log.i(TAG,"name parsed: "+ans);
+            Log.d(TAG,"name parsed: "+ans);
             return ans;
         }
         else{
@@ -59,14 +59,14 @@ public class ArrayParser {
             ans[i]=parseDouble(text,num_l,num_r);
         }
 
-        Log.i(TAG,"array parsed: "+size);
+        Log.d(TAG,"array parsed: "+size);
         return ans;
     }
 
     private static int parseInt(String text, int l, int r) throws ParseException {
         try{
             int ans=Integer.parseInt(text.substring(l,r));
-            Log.i(TAG,"integer parsed: "+ans);
+            Log.d(TAG,"integer parsed: "+ans);
             return ans;
         }catch(Exception e) {
             throw new ParseException(l,"decimal number");
@@ -76,7 +76,7 @@ public class ArrayParser {
     private static double parseDouble(String text, int l, int r) throws ParseException {
         try{
             double ans=Double.parseDouble(text.substring(l,r));
-            Log.i(TAG,"double parsed: "+ans);
+            Log.d(TAG,"double parsed: "+ans);
             return ans;
         }catch(Exception e) {
             throw new ParseException(l,"decimal number");

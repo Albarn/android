@@ -8,6 +8,10 @@
         tools:context="com.albarn.sort.SortActivity" android:orientation="vertical">
 
     <TextView
+            android:text="@string/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/headerSort"/>
+    <TextView
             android:text="@string/task2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView"/>

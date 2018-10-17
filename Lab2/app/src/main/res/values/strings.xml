@@ -10,4 +10,7 @@
     <string name="task2">sort array</string>
     <string name="task2_pattern">n=5(4,3,2,16,0)</string>
     <string name="task2_action">sort</string>
+    <string name="header">rotation times:</string>
+    <string name="log_tag_lifecycle">com.albarn.lifecycle</string>
+    <string name="log_tag_calculation">com.albarn.calculation</string>
 </resources>

@@ -5,7 +5,7 @@ import android.util.Pair;
 import com.albarn.ParseException;
 
 class EquationParser {
-    private static final String TAG="equation";
+    private static final String TAG="com.albarn.calculation";
 
     static String parseEquation(String text) throws ParseException {
 
@@ -15,7 +15,7 @@ class EquationParser {
         if(!vara.first.equals("a")){
             throw new ParseException(0,"a");
         }
-        Log.i(TAG,"a parsed");
+        Log.d(TAG,"a parsed");
 
         //range for b, from from first coma to second coma
         int cIndex=text.indexOf(',',bIndex+1);
@@ -23,14 +23,14 @@ class EquationParser {
         if(!varb.first.equals("b")){
             throw new ParseException(bIndex+1,"b");
         }
-        Log.i(TAG,"b parsed");
+        Log.d(TAG,"b parsed");
 
         //range for c, from second coma to the end of expression
         Pair<String,Double> varc=parseEquals(text,cIndex+1,text.length());
         if(!varc.first.equals("c")){
             throw new ParseException(cIndex+1,"c");
         }
-        Log.i(TAG,"c parsed");
+        Log.d(TAG,"c parsed");
 
         //get double values
         double a=vara.second,b=varb.second,c=varc.second;
@@ -57,7 +57,7 @@ class EquationParser {
         Pair<String,Double> ans = new Pair<>(
                 parseName(text,l,equalsIndex),
                 parseDouble(text,equalsIndex+1,r));
-        Log.i(TAG,"variable parsed: "+ans.first+"="+ans.second);
+        Log.d(TAG,"variable parsed: "+ans.first+"="+ans.second);
         return ans;
     }
 
@@ -78,7 +78,7 @@ class EquationParser {
                     throw new ParseException(i,"letter or digit");
                 }
             }
-            Log.i(TAG,"name parsed: "+ans);
+            Log.d(TAG,"name parsed: "+ans);
             return ans;
         }
         else{
@@ -90,7 +90,7 @@ class EquationParser {
         //parse double with Double.parseDouble() method
         try{
             double ans=Double.parseDouble(text.substring(l,r));
-            Log.i(TAG,"double parsed: "+ans);
+            Log.d(TAG,"double parsed: "+ans);
             return ans;
         }catch(Exception e) {
             throw new ParseException(l,"decimal number");

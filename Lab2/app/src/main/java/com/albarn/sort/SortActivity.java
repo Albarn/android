@@ -1,5 +1,6 @@
 package com.albarn.sort;
 
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,12 +14,68 @@ import com.albarn.equation.R;
 import java.util.ArrayList;
 
 public class SortActivity extends AppCompatActivity {
-    private static final String TAG="SortActivity";
 
     private TextView task2AnsLabel=null;
     private EditText arrayEditText=null;
+
+    @Override
+    protected void onStart() {
+        Log.d(getString(R.string.log_tag_lifecycle),"SortActivity.onStart");
+        super.onStart();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.d(getString(R.string.log_tag_lifecycle),"SortActivity.onRestart");
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.d(getString(R.string.log_tag_lifecycle),"SortActivity.onResume");
+        super.onResume();
+        TextView header=findViewById(R.id.headerSort);
+        String message=getString(R.string.header)+visited;
+        header.setText(message);
+    }
+
+    @Override
+    protected void onPause() {
+        Log.d(getString(R.string.log_tag_lifecycle),"SortActivity.onPause");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.d(getString(R.string.log_tag_lifecycle),"SortActivity.onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.d(getString(R.string.log_tag_lifecycle),"SortActivity.onDestroy");
+        super.onDestroy();
+    }
+
+    private int visited=1;
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        Log.d(getString(R.string.log_tag_lifecycle),"SortActivity.onSaveInstanceState");
+        super.onSaveInstanceState(outState, outPersistentState);
+        outState.putInt(getString(R.string.header),visited);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Log.d(getString(R.string.log_tag_lifecycle),"SortActivity.onRestoreInstanceState");
+        super.onRestoreInstanceState(savedInstanceState);
+        visited=savedInstanceState.getInt(getString(R.string.header));
+        visited++;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(getString(R.string.log_tag_lifecycle),"SortActivity.onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sort);
         task2AnsLabel=(TextView)findViewById(R.id.task2AnsLabel);
@@ -60,7 +117,7 @@ public class SortActivity extends AppCompatActivity {
             }
             task2AnsLabel.setText(ansBuilder.toString());
         } catch (ParseException e) {
-            Log.e(TAG,e.getMessage());
+            Log.e("SortActivity",e.getMessage());
             String message="failed to parse array";
             task2AnsLabel.setText(message);
         }
