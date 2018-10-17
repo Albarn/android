@@ -82,7 +82,11 @@ public class SortActivity extends AppCompatActivity {
         arrayEditText=(EditText)findViewById(R.id.arrayEditText);
     }
 
+    //sort array, that user wrote in arrayEditText
+    //and show it in task2AnsLabel
     public void sort(View view) {
+
+        //get origin text and remove spaces
         String origin= arrayEditText.getText().toString();
         StringBuilder plainTextBuilder=new StringBuilder();
         for(int i=0;i<origin.length();i++){
@@ -91,8 +95,12 @@ public class SortActivity extends AppCompatActivity {
             }
         }
         String plainText=plainTextBuilder.toString();
+
+        //then, parse plainText and get double array
         try {
             Pair<String,double[]> namedArray=ArrayParser.parseNamedArray(plainText);
+
+            //make bubble sort of this
             for(int i=0;i<namedArray.second.length;i++){
                 for(int j=i+1;j<namedArray.second.length;j++){
                     if(namedArray.second[i]>namedArray.second[j]){
@@ -102,10 +110,17 @@ public class SortActivity extends AppCompatActivity {
                     }
                 }
             }
+
+            //build answer according to ArrayParser rules
             StringBuilder ansBuilder=new StringBuilder();
+
+            //name
             ansBuilder.append(namedArray.first);
             ansBuilder.append('=');
+            //then array size
             ansBuilder.append(namedArray.second.length);
+
+            //after that list of decimal numbers
             ansBuilder.append('(');
             for(int i=0;i<namedArray.second.length;i++){
                 ansBuilder.append(namedArray.second[i]);
@@ -117,7 +132,7 @@ public class SortActivity extends AppCompatActivity {
             }
             task2AnsLabel.setText(ansBuilder.toString());
         } catch (ParseException e) {
-            Log.e("SortActivity",e.getMessage());
+            Log.e(getString(R.string.log_tag_calculation),e.getMessage());
             String message="failed to parse array";
             task2AnsLabel.setText(message);
         }
