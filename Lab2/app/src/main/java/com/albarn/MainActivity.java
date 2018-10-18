@@ -1,12 +1,12 @@
 package com.albarn;
 
 import android.content.Intent;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import com.albarn.async.AsyncActivity;
 import com.albarn.equation.EquationActivity;
 import com.albarn.equation.R;
 import com.albarn.sort.SortActivity;
@@ -83,6 +83,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void sortArray(View view) {
         Intent equation=new Intent(this, SortActivity.class);
+        startActivity(equation);
+    }
+
+    public void runAsyncTask(View view) {
+        Intent equation=new Intent(this, AsyncActivity.class);
         startActivity(equation);
     }
 }

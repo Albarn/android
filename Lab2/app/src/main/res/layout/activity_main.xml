@@ -20,5 +20,12 @@
             android:text="@string/task2"
             android:onClick="sortArray"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/sortButton" android:layout_weight="1"/>
+            android:layout_height="wrap_content" android:id="@+id/sortButton" android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
+    <Button
+            android:text="@string/task3"
+            android:onClick="runAsyncTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/asyncButton" android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
 </LinearLayout>

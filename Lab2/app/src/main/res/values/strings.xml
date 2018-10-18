@@ -13,4 +13,5 @@
     <string name="header">rotation times:</string>
     <string name="log_tag_lifecycle">com.albarn.lifecycle</string>
     <string name="log_tag_calculation">com.albarn.calculation</string>
+    <string name="task3">run async task</string>
 </resources>
