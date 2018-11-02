@@ -10,6 +10,7 @@ import com.albarn.async.AsyncActivity;
 import com.albarn.equation.EquationActivity;
 import com.albarn.equation.R;
 import com.albarn.sort.SortActivity;
+import com.albarn.web.WebActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -89,5 +90,17 @@ public class MainActivity extends AppCompatActivity {
     public void runAsyncTask(View view) {
         Intent equation=new Intent(this, AsyncActivity.class);
         startActivity(equation);
+    }
+
+    public void webView(View view){
+        Intent equation=new Intent(this, WebActivity.class);
+        startActivity(equation);
+    }
+
+    public void sortWithAdapter(View view){
+        /*
+        Intent equation=new Intent(this, AdapterActivity.class);
+        startActivity(equation);
+        */
     }
 }
