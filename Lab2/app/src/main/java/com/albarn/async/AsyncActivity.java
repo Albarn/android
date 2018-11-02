@@ -77,7 +77,7 @@ public class AsyncActivity extends AppCompatActivity {
 
             //parameter for line function
             float t=0;
-
+            float X,Y;
             @Override
             protected void onCancelled() {
                 Log.d(getString(R.string.log_tag_lifecycle),"MoveAsyncTask.onCancelled()");
@@ -91,12 +91,25 @@ public class AsyncActivity extends AppCompatActivity {
             }
 
             @Override
+            protected void onProgressUpdate(Void... values) {
+                x=X;
+                y=Y;
+                invalidate();
+                super.onProgressUpdate(values);
+            }
+
+            @Override
+            protected void onPostExecute(Float aFloat) {
+                super.onPostExecute(aFloat);
+            }
+
+            @Override
             protected Float doInBackground(Void... ignored) {
                 Log.d(getString(R.string.log_tag_lifecycle),"MoveAsyncTask.doInBackground()");
                 //get line functions constants
                 float x1=x,y1=y;
                 float ax=touchX-x, ay=touchY-y;
-
+                X=x;Y=y;
                 //params for animation
                 int steps=100;
                 int time=1000;
@@ -107,9 +120,9 @@ public class AsyncActivity extends AppCompatActivity {
                     }
 
                     //set new point according to parameter value
-                    x=x1+ax*t;
-                    y=y1+ay*t;
-                    invalidate();
+                    X=x1+ax*t;
+                    Y=y1+ay*t;
+                    publishProgress();
 
                     //wait for a bit
                     SystemClock.sleep(time/steps);
