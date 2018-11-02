@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 import com.albarn.ParseException;
 import com.albarn.equation.R;
@@ -17,9 +15,8 @@ import java.util.ArrayList;
 
 public class SortActivity extends AppCompatActivity {
 
-    private TextView task2AnsLabel;
-    private EditText arrayEditText;
-    private ListView numbersListView;
+    private TextView task2AnsLabel=null;
+    private EditText arrayEditText=null;
 
     @Override
     protected void onStart() {
@@ -83,7 +80,6 @@ public class SortActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sort);
         task2AnsLabel=(TextView)findViewById(R.id.task2AnsLabel);
         arrayEditText=(EditText)findViewById(R.id.arrayEditText);
-        numbersListView=(ListView)findViewById(R.id.numbersListView);
     }
 
     //sort array, that user wrote in arrayEditText
@@ -115,19 +111,6 @@ public class SortActivity extends AppCompatActivity {
                 }
             }
 
-            String[] numbersList=new String[namedArray.second.length];
-            for(int i=0;i<numbersList.length;i++){
-                numbersList[i]=Double.toString(namedArray.second[i]);
-            }
-
-            ArrayAdapter<String> adapter=new ArrayAdapter<String>(
-                    this,android.R.layout.simple_list_item_1,numbersList
-            );
-            numbersListView.setAdapter(adapter);
-
-            task2AnsLabel.setText("");
-            //deprecated task
-            /*
             //build answer according to ArrayParser rules
             StringBuilder ansBuilder=new StringBuilder();
 
@@ -148,7 +131,6 @@ public class SortActivity extends AppCompatActivity {
                 }
             }
             task2AnsLabel.setText(ansBuilder.toString());
-            */
         } catch (ParseException e) {
             Log.e(getString(R.string.log_tag_calculation),e.getMessage());
             String message="failed to parse array";

@@ -14,14 +14,4 @@
     <string name="log_tag_lifecycle">com.albarn.lifecycle</string>
     <string name="log_tag_calculation">com.albarn.calculation</string>
     <string name="task3">run async task</string>
-    <string name="task4">WEB VIEW</string>
-    <string name="task5">sort with adapter</string>
-    <integer-array name="strange_numbers">
-        <item>0</item>
-        <item>4</item>
-        <item>6</item>
-        <item>8</item>
-        <item>9</item>
-        <item>12</item>
-    </integer-array>
 </resources>

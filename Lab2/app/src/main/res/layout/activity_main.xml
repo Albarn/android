@@ -28,14 +28,4 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/asyncButton" android:layout_weight="1"
             style="@style/Widget.AppCompat.Button.Borderless"/>
-    <Button
-            android:text="@string/task4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/webButton" android:layout_weight="1"
-            android:onClick="webView" style="@style/Widget.AppCompat.Button.Borderless"/>
-    <Button
-            android:text="@string/task5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/adapterButton" android:layout_weight="1"
-            style="@style/Widget.AppCompat.Button.Borderless" android:onClick="sortWithAdapter"/>
 </LinearLayout>
