@@ -26,6 +26,8 @@
         </activity>
         <activity android:name="com.albarn.web.WebActivity">
         </activity>
+        <activity android:name="com.albarn.jsoup.WeatherActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -16,6 +16,7 @@
     <string name="task3">run async task</string>
     <string name="task4">WEB VIEW</string>
     <string name="task5">sort with adapter</string>
+    <string name="weather_update">refresh</string>
     <integer-array name="strange_numbers">
         <item>0</item>
         <item>4</item>
